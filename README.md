@@ -1,0 +1,292 @@
+VISUAL CODE 
+ARCHIVO DE ENFERMERIA
+
+
+
+:root {
+    --color-fondo: #f5f5f5;
+    --color-tarjeta: #f1f1f1;
+    --color-texto: #222;
+    --color-principal: #00a59a; 
+    --color-secundario: #666;
+    --color-peligro: #e53935;
+    --radio-borde: 14px;
+    --sombra-suave: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.pantalla {
+    display: none;
+    width: 100%;
+    max-width: 480px;
+}
+
+.pantalla-activa {
+    display: block;
+}
+
+.tarjeta {
+    background-color: #fff;
+    border-radius: var(--radio-borde);
+    padding: 24px 20px 28px;
+    box-shadow: var(--sombra-suave);
+}
+
+.tarjeta-confirmacion {
+    text-align: center;
+}
+
+.titulo-pantalla {
+    text-align: center;
+    font-size: clamp(1.6rem, 5vw, 2rem);
+    letter-spacing: 0.08em;
+    margin: 0 0 16px;
+}
+
+.encabezado-simple {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.encabezado-simple .titulo-pantalla {
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.contenedor-ilustracion {
+    display: flex;
+    justify-content: center;
+    margin: 18px 0 12px;
+}
+
+.ilustracion {
+    width: 120px;
+    height: auto;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.formulario-secundario {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.campo-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.campo-input {
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color-tarjeta);
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.campo-input:focus {
+    box-shadow: 0 0 0 2px rgba(0, 165, 154, 0.35);
+}
+
+.icono {
+    font-size: 1.1rem;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.btn-principal {
+    border: none;
+    border-radius: 999px;
+    background-color: var(--color-principal);
+    color: #fff;
+    padding: 10px 16px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
+    box-shadow: 0 4px 10px rgba(0, 165, 154, 0.3);
+}
+
+.btn-principal:hover {
+    background-color: #019085;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0, 165, 154, 0.4);
+}
+
+.btn-secundario {
+    border: none;
+    border-radius: 999px;
+    background-color: #dcdcdc;
+    color: #333;
+    padding: 10px 16px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.btn-peligro {
+    border: none;
+    border-radius: 999px;
+    background-color: var(--color-peligro);
+    color: #fff;
+    padding: 10px 16px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(229, 57, 53, 0.35);
+}
+
+.btn-link {
+    border: none;
+    background: none;
+    color: var(--color-principal);
+    font-size: 0.85rem;
+    padding: 4px 0;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+}
+
+.ancho-completo {
+    width: 100%;
+}
+
+.lista-botones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.btn-opcion {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--color-tarjeta);
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+.btn-opcion:hover {
+    background-color: #e6e6e6;
+}
+
+.texto-ayuda {
+    font-size: 0.8rem;
+    color: var(--color-secundario);
+    margin: 4px 0 8px;
+}
+
+.acciones-secundarias {
+    display: flex;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+.mensaje-error {
+    color: var(--color-peligro);
+    font-size: 0.85rem;
+    margin-top: 6px;
+    text-align: center;
+}
+
+.mensaje-info {
+    color: var(--color-secundario);
+    font-size: 0.85rem;
+    margin-top: 6px;
+    text-align: center;
+}
+
+.subtitulo {
+    font-size: 1rem;
+    margin: 0 0 4px;
+}
+
+.listado {
+    margin-top: 18px;
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+
+.tabla th,
+.tabla td {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 6px 4px;
+    text-align: left;
+}
+
+.tabla th {
+    font-weight: 600;
+}
+
+.texto-confirmacion {
+    margin-top: 12px;
+    font-size: 0.95rem;
+}
+
+.grupo-botones-confirmacion {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+@media (min-width: 600px) {
+    .tarjeta {
+        padding: 32px 28px 36px;
+    }
+
+    .titulo-pantalla {
+        font-size: 2.1rem;
+    }
+}
